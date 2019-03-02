@@ -18,7 +18,7 @@ public class Info {
 
 
     String apikey = "da79e14c4389b62d31cec4e24279b686";
-    String vancouverweatherquery = "https://api.openweathermap.org/data/2.5/weather?q=Vancouver,CA&APPID=";
+    String vancouverweatherquery = "https://api.openweathermap.org/data/2.5/weather?q=toronto,ca&APPID=";
     StringBuilder sb = new StringBuilder();
 
 
@@ -64,7 +64,7 @@ public class Info {
             }
 
 
-          //  System.out.println(sb);
+            System.out.println(sb);
 
         } finally {
 
@@ -110,7 +110,7 @@ public class Info {
 
 
 
-        for (int q = 1; q < 160; q++){
+        for (int q = 1; q < 153; q++){
 
             char t = 't';
             char e = 'e';
@@ -123,13 +123,13 @@ public class Info {
                 char char2 = sb.charAt(q +7);
                 char char3 = sb.charAt(q +8);
                 char char4 = sb.charAt(q +9);
-//                char char5 = sb.charAt(q +10);
-//                char char6 = sb.charAt(q +11);
+               // char char5 = sb.charAt(q +10);
+               // char char6 = sb.charAt(q +11);
 
 
                 StringBuilder thing = new StringBuilder().append(char1).append(char2).append(char3).append(char4);//.append(char5).append(char6);
 
-                bee = (Double.parseDouble(thing.toString()) - 273.15);
+                bee = (Double.parseDouble(thing.toString()) - 273);
                 bee = round(bee);
             }
 
@@ -151,7 +151,7 @@ public class Info {
 
                 StringBuilder thing = new StringBuilder().append(char1).append(char2);
 
-                dee = Double.parseDouble(thing.toString());
+                dee = Double.parseDouble(thing.toString())*3.6;
 
             }
 
@@ -186,7 +186,7 @@ public class Info {
         }
 
 
-        else return "no";
+        else return "yes";
 
 
     }
